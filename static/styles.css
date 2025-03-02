@@ -1,0 +1,337 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+/* .header {
+    background: linear-gradient(135deg, #004d80, #009999);
+    color: #fff;
+    padding: 20px 30px;
+    text-align: center;
+    font-size: 24px;
+    position: relative;
+    border-bottom: 4px solid #0073e6;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+} */
+/* 固定顶部导航栏 */
+.header {
+    position: fixed; /* 固定定位 */
+    top: 0; /* 距离页面顶部为0 */
+    left: 0;
+    width: 100%; /* 宽度占满整个页面 */
+    background: linear-gradient(to right, #004d80, #009999);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 22px;
+    z-index: 1000; /* 确保 header 在其他内容之上 */
+    border-bottom: 4px solid #0073e6;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 给 header 添加一个阴影效果 */
+}
+
+/* Lang switch button */
+.lang-switch {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #0073e6;
+    border: 2px solid transparent;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover and focus states */
+.lang-switch:hover, .lang-switch:focus {
+    background: rgba(255, 255, 255, 1);
+    border-color: #0073e6;
+    transform: translateY(-2px); /* Button lift effect */
+}
+
+/* Active state */
+.lang-switch:active {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(1px); /* Button pressed effect */
+}
+
+/* Focus state outline (for accessibility) */
+.lang-switch:focus-visible {
+    outline: none;
+    border-color: #0073e6;
+    box-shadow: 0 0 0 4px rgba(0, 115, 230, 0.3);
+}
+
+/* Lang dropdown menu styling */
+.lang-dropdown {
+    display: none;
+    position: absolute;
+    top: 55px; /* 将位置稍微下移 */
+    right: 30px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    width: auto; /* 宽度自动适应内容 */
+    min-width: 90px; /* 设置最小宽度以避免过小 */
+    padding: 5px 0;
+}
+
+/* List styling for language options */
+.lang-dropdown ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Each language option styling */
+.lang-dropdown ul li {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+    color: #333;
+    text-align: left;
+}
+
+/* Hover effect for language options */
+.lang-dropdown ul li:hover {
+    background-color: #f0f8ff;
+    padding-left: 30px;
+    color: #0073e6;
+}
+
+/* Add a subtle focus effect when the dropdown is opened */
+.lang-dropdown.show {
+    animation: dropdownShow 0.3s ease-out;
+}
+
+/* Animation for dropdown opening */
+@keyframes dropdownShow {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Container for main content */
+/* .container {
+    width: 85%;
+    margin: 90px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+} */
+.container {
+    width: 80%;
+    margin: 90px auto;
+    margin-bottom: 0px;
+    background: #fff;
+    padding: 30px;
+    padding-bottom: 10px;
+    border-radius: 8px; /* 保持上方的圆角 */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* 保持阴影效果 */
+    overflow: hidden; /* 去除底部的边界效果 */
+    position: relative;
+}
+
+
+
+/* Section styling */
+.section {
+    margin-bottom: 30px;
+}
+
+.section h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #0073e6;
+    border-left: 5px solid #0073e6;
+    padding-left: 10px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Grid layout for info boxes */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* Info box style */
+.info-box {
+    background: #f7faff;
+    padding: 20px;
+    border-left: 4px solid #0073e6;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Video container styling */
+.video-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Video item styling */
+.video-item {
+    text-align: center; /* Center the text under the video */
+}
+
+.video-container video {
+    width: 60%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.video-container video:hover {
+    transform: scale(1.05);
+}
+
+.video-item span {
+    display: block; /* Ensure the text appears below the video */
+    margin-top: 10px; /* Add spacing between the video and text */
+}
+
+
+/* Download section */
+.download a {
+    color: #0073e6;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.download a:hover {
+    color: #005bb5;
+}
+
+/* Citation box styling */
+/* Citation content with preformatted text */
+pre {
+    white-space: pre-wrap; /* Ensure that long lines are wrapped correctly */
+    word-wrap: break-word; /* Break long words */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+/* Citation card style */
+.citation {
+    background: #f7faff;
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    position: relative; /* Ensure button can be positioned relative to this container */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .video-container {
+        flex-direction: column;
+    }
+}
+/* 复制按钮 */
+/* Citation card style */
+.citation {
+    background: #f7faff;
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    position: relative; /* Ensure button can be positioned relative to this container */
+}
+
+/* Citation content with copy button */
+.citation-content {
+    position: relative; /* To position the copy button in the top right corner */
+}
+
+/* Copy button styling */
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 6px 10px;
+    background-color: #58a6ff; /* Lighter blue */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.copy-btn:hover {
+    background-color: #4b96d8; /* Slightly darker blue */
+}
+
+.copy-btn:active {
+    background-color: #3f7cb7; /* Even darker on click */
+}
+
+.copy-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 115, 230, 0.3);
+}
+
+/* Footer styling */
+.footer {
+    background-color: #f1f1f1;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the list container */
+ul {
+    padding-left: 10px; /* Add some padding on the left to prevent the points from being too close */
+    list-style-position: inside; /* Ensure the bullet points are inside the list box */
+}
+
+/* Styling for list items */
+ul li {
+    margin-bottom: 10px; /* Add some spacing between list items */
+    line-height: 1.0; /* Ensure better line spacing */
+}
