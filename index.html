@@ -1,1 +1,89 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>vuetest</title><link href=/static/css/app.6071facd46d81dca38a72818131eb22b.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=/static/js/manifest.8764fd9e18d3cd5e725a.js></script><script type=text/javascript src=/static/js/vendor.8762b8595d04d24ee007.js></script><script type=text/javascript src=/static/js/app.40e1889613a2bd14ff64.js></script></body></html>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日常采集数据集</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        .header { background: linear-gradient(to right, #004d80, #009999); color: white; padding: 15px; text-align: center; font-size: 22px; position: relative; }
+        .container { width: 80%; margin: auto; background: white; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        .section { margin-bottom: 20px; }
+        .section h2 { border-left: 5px solid #0073e6; padding-left: 10px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .info-box { background: #eef; padding: 10px; border-left: 4px solid #0073e6; }
+        .video-container { display: flex; gap: 10px; }
+        .video-container video { width: 32%; border-radius: 5px; }
+        .download a { color: #0073e6; text-decoration: none; font-weight: bold; }
+        .citation { background: #eef; padding: 10px; font-family: monospace; }
+        .lang-switch { position: absolute; top: 10px; right: 20px; cursor: pointer; background: white; padding: 5px 10px; border-radius: 5px; }
+    </style>
+    <script>
+        async function loadLanguage(lang) {
+            const response = await fetch(`lang_${lang}.json`);
+            const translations = await response.json();
+            document.querySelectorAll("[data-key]").forEach(el => {
+                el.textContent = translations[el.dataset.key];
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <span data-key="title">日常采集数据集</span>
+        <button class="lang-switch" onclick="loadLanguage('en')">EN</button>
+        <button class="lang-switch" onclick="loadLanguage('zh')">中文</button>
+    </div>
+    <div class="container">
+        <div class="section">
+            <h2 data-key="intro">简介</h2>
+            <p data-key="intro_text">本数据集专门为机器人时序数据分类训练创建，数据来源于...</p>
+        </div>
+        
+        <div class="section grid">
+            <div class="info-box">
+                <h3 data-key="release_info">发布信息</h3>
+                <p><strong data-key="org">发布机构：</strong>北航ACT实验室</p>
+                <p><strong data-key="release_date">发布时间：</strong>2024/10/22</p>
+                <p><strong data-key="update_date">更新日期：</strong>2024/10/25</p>
+            </div>
+            <div class="info-box">
+                <h3 data-key="dataset_attr">数据集属性</h3>
+                <p><strong data-key="samples">样本点数目：</strong>12</p>
+                <p><strong data-key="features">特征：</strong>18</p>
+                <p><strong data-key="task">相关任务：</strong>机器人分类</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 data-key="dataset_info">数据集信息</h2>
+            <ul>
+                <li data-key="time">时间 (时间戳 ms)</li>
+                <li data-key="axle_moment">axle_moment: 机器人N轴的力矩 (NM)</li>
+                <li data-key="axle_position">axle_position: 机器人N轴的旋转位置 (°)</li>
+                <li data-key="axle_speed">axle_speed: 机器人N轴的角速度 (°/s)</li>
+            </ul>
+        </div>
+        
+        <div class="section download">
+            <h2 data-key="download">数据下载</h2>
+            <p data-key="size">数据集大小：20GB</p>
+            <p><a href="#" data-key="download_link">点击下载数据集</a></p>
+        </div>
+        
+        <div class="section">
+            <h2 data-key="videos">示例视频</h2>
+            <div class="video-container">
+                <video controls><source src="#" type="video/mp4"><span data-key="video1">打磨机器人</span></video>
+                <video controls><source src="#" type="video/mp4"><span data-key="video2">码垛机器人</span></video>
+                <video controls><source src="#" type="video/mp4"><span data-key="video3">装配机器人</span></video>
+            </div>
+        </div>
+        
+        <div class="section citation">
+            <h2 data-key="citation">引用</h2>
+            <p>@misc{ title={<span data-key="title">日常采集数据集</span>}, url={https://datasets.act.buaa.edu.cn/}, author={北航ACT实验室}, year={2024} }</p>
+        </div>
+    </div>
+</body>
+</html>
