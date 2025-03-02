@@ -1,0 +1,104 @@
+/* dataset switch button container */
+.dataset-switch-container {
+    display: inline-flex;
+    flex-direction: column; /* Stack the button and dropdown vertically */
+    align-items: flex-start; /* Align items to the left */
+    position: relative; /* Keep the relative position to anchor the dropdown */
+}
+
+/* dataset switch button */
+.dataset-switch {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #0073e6;
+    border: 2px solid transparent;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover and focus states */
+.dataset-switch:hover, .dataset-switch:focus {
+    background: rgba(255, 255, 255, 1);
+    border-color: #0073e6;
+    transform: translateY(-2px); /* Button lift effect */
+}
+
+/* Active state */
+.dataset-switch:active {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(1px); /* Button pressed effect */
+}
+
+/* Focus state outline (for accessibility) */
+.dataset-switch:focus-visible {
+    outline: none;
+    border-color: #0073e6;
+    box-shadow: 0 0 0 4px rgba(0, 115, 230, 0.3);
+}
+
+/* dataset dropdown menu styling */
+.dataset-dropdown {
+    display: none;
+    position: absolute; /* Position dropdown absolutely */
+    top: 100%; /* Place it directly below the button */
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    width: auto; /* Width adapts to content */
+    min-width: 90px; /* Minimum width to avoid being too small */
+    padding: 5px 0;
+}
+
+/* Display the dropdown when hovering over the dataset-switch button */
+.dataset-switch-container:hover .dataset-dropdown,
+.dataset-dropdown:hover {
+    display: block;
+}
+
+/* List styling for datasetuage options */
+.dataset-dropdown ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Each datasetuage option styling */
+.dataset-dropdown ul li {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+    color: #333;
+    text-align: left;
+}
+
+/* Hover effect for datasetuage options */
+.dataset-dropdown ul li:hover {
+    background-color: #f0f8ff;
+    padding-left: 30px;
+    color: #0073e6;
+}
+
+/* Add a subtle focus effect when the dropdown is opened */
+.dataset-dropdown.show {
+    animation: dropdownShow 0.3s ease-out;
+}
+
+/* Animation for dropdown opening */
+@keyframes dropdownShow {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

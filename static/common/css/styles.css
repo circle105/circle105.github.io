@@ -1,0 +1,152 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 固定顶部导航栏 */
+.header {
+    position: fixed;
+    display: flex;
+    align-items: center; /* Vertically align the items */
+    justify-content: space-between; /* Ensure the content is spaced out */
+    /* 固定定位 */
+    top: 0;
+    /* 距离页面顶部为0 */
+    left: 0;
+    width: 100%;
+    /* 宽度占满整个页面 */
+    background: linear-gradient(to right, #004d80, #009999);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 22px;
+    z-index: 1000;
+    /* 确保 header 在其他内容之上 */
+    border-bottom: 4px solid #0073e6;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* 给 header 添加一个阴影效果 */
+}
+
+/* Left side (logo) */
+.logo {
+    width: auto;
+    /* Adjust the size of the logo */
+    height: auto;
+    /* Adjust the size of the logo */
+    margin-right: 20px;
+    /* Space between logo and title */
+}
+.container {
+    width: 80%;
+    margin: 90px auto;
+    margin-bottom: 0px;
+    background: #fff;
+    padding: 30px;
+    padding-bottom: 10px;
+    border-radius: 8px;
+    /* 保持上方的圆角 */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    /* 保持阴影效果 */
+    overflow: hidden;
+    /* 去除底部的边界效果 */
+    position: relative;
+}
+
+
+
+/* Section styling */
+.section {
+    margin-bottom: 30px;
+}
+
+.section h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #0073e6;
+    border-left: 5px solid #0073e6;
+    padding-left: 10px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Grid layout for info boxes */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* Info box style */
+.info-box {
+    background: #f7faff;
+    padding: 20px;
+    border-left: 4px solid #0073e6;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+
+/* Download section */
+.download a {
+    color: #0073e6;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.download a:hover {
+    color: #005bb5;
+}
+
+/* Citation box styling */
+/* Citation content with preformatted text */
+pre {
+    white-space: pre-wrap;
+    /* Ensure that long lines are wrapped correctly */
+    word-wrap: break-word;
+    /* Break long words */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+
+/* Footer styling */
+.footer {
+    background-color: #f1f1f1;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the list container */
+ul {
+    padding-left: 10px;
+    /* Add some padding on the left to prevent the points from being too close */
+    list-style-position: inside;
+    /* Ensure the bullet points are inside the list box */
+}
+
+/* Styling for list items */
+ul li {
+    margin-bottom: 10px;
+    /* Add some spacing between list items */
+    line-height: 1.0;
+    /* Ensure better line spacing */
+}

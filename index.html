@@ -4,20 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>日常采集数据集</title>
-    <link rel="stylesheet" href="static/styles.css">
-    <script src="static/script.js" defer></script>
+    <title>数据集</title>
+    <link rel="stylesheet" href="static/common/css/styles.css">
+    <link rel="stylesheet" href="static/common/css/lang.css">
+    <link rel="stylesheet" href="static/common/css/video.css">
+    <link rel="stylesheet" href="static/common/css/cite.css">
+    <link rel="stylesheet" href="static/common/css/dataset.css">
+    <script src="static/classify/script.js" defer></script>
 </head>
 
 <body id="body">
     <div class="header">
-        <span data-key="title">日常采集数据集</span>
-        <button class="lang-switch" data-key="lang_button" onclick="toggleDropdown()">语言</button>
-        <div class="lang-dropdown">
-            <ul>
-                <li data-key="lang_option_en" onclick="loadLanguage('en'); toggleDropdown()">英文</li>
-                <li data-key="lang_option_zh" onclick="loadLanguage('zh'); toggleDropdown()">中文</li>
-            </ul>
+        <img src="./static/common/img/icon.png" alt="Logo" class="logo">
+        <span class="dataset-title" data-key="title">日常采集数据集</span>
+        <div class="buttons">
+
+            <div class="lang-switch-container">
+                <button class="lang-switch" data-key="lang_button">语言 ▼</button>
+                <div class="lang-dropdown">
+                    <ul>
+                        <li data-key="lang_option_en" onclick="loadLanguage('en'); ">英文</li>
+                        <li data-key="lang_option_zh" onclick="loadLanguage('zh'); ">中文</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dataset-switch-container">
+                <button class="dataset-switch" data-key="dataset_button">更多 ▼</button>
+                <div class="dataset-dropdown">
+                    <ul>
+                        <li data-key="more-pathplan" onclick="window.location.href = './pathplan.html';">
+                            轨迹规划
+                        </li>
+                        <li data-key="more-reposity"
+                            onclick="window.location.href = 'https://github.com/ACRoboT-buaa/ACTDatasets.github.io';">仓库
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
     <div class="container">
@@ -61,19 +84,19 @@
 
                 <div class="video-item">
                     <video controls>
-                        <source src="static/videos/robotClassify/damo.mp4" type="video/mp4">
+                        <source src="static/classify/videos/damo.mp4" type="video/mp4">
                     </video>
                     <span data-key="video1">打磨机器人</span>
                 </div>
                 <div class="video-item">
                     <video controls>
-                        <source src="static/videos/robotClassify/maduo.mp4" type="video/mp4">
+                        <source src="static/classify/videos/maduo.mp4" type="video/mp4">
                     </video>
                     <span data-key="video2">码垛机器人</span>
                 </div>
                 <div class="video-item">
                     <video controls>
-                        <source src="static/videos/robotClassify/zhuangpei.mp4" type="video/mp4">
+                        <source src="static/classify/videos/zhuangpei.mp4" type="video/mp4">
                     </video>
                     <span data-key="video3">装配机器人</span>
                 </div>

@@ -1,0 +1,20 @@
+{
+    "intro": "简介",
+    "disclaimer": "免责声明：尊重原创，非授权批量搬运将承担法律责任。如有合作意向，请联系本实验室。",
+    "release_info": "发布信息",
+    "dataset_info": "数据集信息",
+    "dataset_attr": "数据集属性",
+    "download": "数据下载",
+    "download_link": "点击下载数据集",
+    "videos": "示例视频",
+    "lang_button": "语言 ▼",
+    "lang_option_en": "英文",
+    "lang_option_zh": "中文",
+    "citation": "引用",
+    "copy_button": "复制",
+    "copied_button_zh": "已复制",
+    "dataset_button": "更多 ▼",
+    "more-classify": "分类数据集",
+    "more-pathplan": "轨迹规划数据集",
+    "more-reposity": "仓库"
+}

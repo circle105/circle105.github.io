@@ -1,0 +1,20 @@
+{
+    "intro": "Introduction",
+    "disclaimer": "Disclaimer: Respect for originality. Unauthorized bulk distribution will bear legal responsibility. For collaboration inquiries, please contact our lab.",
+    "release_info": "Release Information",
+    "dataset_info": "Dataset Information",
+    "dataset_attr": "Dataset Attributes",
+    "download": "Data Download",
+    "download_link": "Click to Download Dataset",
+    "videos": "Sample Videos",
+    "lang_button": "Language ▼",
+    "lang_option_en": "English",
+    "lang_option_zh": "Chinese",
+    "citation": "Cite",
+    "copy_button": "Copy",
+    "copied_button_zh": "Copied",
+    "dataset_button": "More ▼",
+    "more-classify": "Classification Dataset",
+    "more-pathplan": "Trajectory Planning Dataset",
+    "more-reposity": "Repository"
+}
