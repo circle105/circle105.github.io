@@ -28,5 +28,8 @@
     "video1": "打磨机器人",
     "video2": "码垛机器人",
     "video3": "装配机器人",
-    "citation": "引用"
+    "citation": "引用",
+    "lang_button": "语言",
+    "lang_option_en": "英文",
+    "lang_option_zh": "中文"
 }

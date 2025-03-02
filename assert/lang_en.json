@@ -28,5 +28,8 @@
     "video1": "Polishing Robot",
     "video2": "Stacking Robot",
     "video3": "Assembly Robot",
-    "citation": "Citation"
+    "citation": "Citation",
+    "lang_button": "Language",
+    "lang_option_en": "English",
+    "lang_option_zh": "Chinese"
 }

@@ -4,144 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>日常采集数据集</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-       .header {
-            background: linear-gradient(to right, #004d80, #009999);
-            color: white;
-            padding: 15px;
-            text-align: center;
-            font-size: 22px;
-            position: relative;
-        }
-       .container {
-            width: 80%;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-       .section {
-            margin-bottom: 20px;
-        }
-       .section h2 {
-            border-left: 5px solid #0073e6;
-            padding-left: 10px;
-        }
-       .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-       .info-box {
-            background: #eef;
-            padding: 10px;
-            border-left: 4px solid #0073e6;
-        }
-       .video-container {
-            display: flex;
-            gap: 10px;
-        }
-       .video-container video {
-            width: 32%;
-            border-radius: 5px;
-        }
-       .download a {
-            color: #0073e6;
-            text-decoration: none;
-            font-weight: bold;
-        }
-       .citation {
-            background: #eef;
-            padding: 10px;
-            font-family: monospace;
-        }
-       .lang-switch {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            cursor: pointer;
-            background: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
-       .lang-dropdown {
-            display: none;
-            position: absolute;
-            top: 40px;
-            right: 20px;
-            background-color: white;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            z-index: 1;
-        }
-       .lang-dropdown ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-       .lang-dropdown ul li {
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-       .lang-dropdown ul li:hover {
-            background-color: #f0f0f0;
-        }
-    </style>
-    <script>
-        let currentLanguage = 'zh';
-
-        async function loadLanguage(lang) {
-            if (lang === currentLanguage) {
-                return;
-            }
-            try {
-                const random = new Date().getTime();
-                const response = await fetch(`lang_${lang}.json?${random}`);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                const translations = await response.json();
-
-                document.querySelectorAll("[data-key]").forEach(el => {
-                    const key = el.dataset.key;
-                    if (translations[key]) {
-                        if (el.tagName === "A") {
-                            el.textContent = translations[key];
-                        } else {
-                            el.innerHTML = translations[key];
-                        }
-                    }
-                });
-                currentLanguage = lang;
-            } catch (error) {
-                console.error("Error loading language file:", error);
-            }
-        }
-
-        function toggleDropdown() {
-            const dropdown = document.querySelector('.lang-dropdown');
-            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-        }
-
-        window.addEventListener('load', () => {
-            loadLanguage('zh');
-        });
-    </script>
+    <link rel="stylesheet" href="assert/styles.css">
+    <script src="assert/script.js" defer></script>
 </head>
 <body>
     <div class="header">
         <span data-key="title">日常采集数据集</span>
-        <button class="lang-switch" onclick="toggleDropdown()">语言</button>
+        <button class="lang-switch" data-key="lang_button" onclick="toggleDropdown()">语言</button>
         <div class="lang-dropdown">
             <ul>
-                <li onclick="loadLanguage('en'); toggleDropdown()">英文</li>
-                <li onclick="loadLanguage('zh'); toggleDropdown()">中文</li>
+                <li data-key="lang_option_en" onclick="loadLanguage('en'); toggleDropdown()">英文</li>
+                <li data-key="lang_option_zh" onclick="loadLanguage('zh'); toggleDropdown()">中文</li>
             </ul>
         </div>
     </div>
@@ -176,7 +49,7 @@
         <div class="section download">
             <h2 data-key="download">数据下载</h2>
             <p data-key="size">数据集大小：20GB</p>
-            <p><a href="#" data-key="download_link">点击下载数据集</a></p>
+            <p><a href="https://bhpan.buaa.edu.cn/link/AA0BA5388669C84E5EB7BB830C313CF871" data-key="download_link" target="_blank">点击下载数据集</a></p>
         </div>
         <div class="section">
             <h2 data-key="videos">示例视频</h2>
